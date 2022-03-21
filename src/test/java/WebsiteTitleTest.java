@@ -1,8 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
@@ -38,6 +35,7 @@ public class WebsiteTitleTest {
 
     @Tag("SiiPortal")
     @Tag("Regression")
+    @DisplayName("Sii portal")
     @ParameterizedTest
     @ValueSource(strings = {"Strona główna Bydgoszcz", "Strona główna Lublin"})
     void siiPortalTest(String expectedTitle) {
@@ -47,6 +45,7 @@ public class WebsiteTitleTest {
 
     @Tag("Onet")
     @Tag("Regression")
+    @DisplayName("Onet.pl")
     @ParameterizedTest
     @ValueSource(strings = {"Onet – Jesteś na bieżąco"})
     void onetTest(String expectedTitle) {
@@ -56,6 +55,7 @@ public class WebsiteTitleTest {
 
     @Tag("Kotuszkowo")
     @Tag("Regression")
+    @DisplayName("Kotuszkowo blog")
     @ParameterizedTest
     @ValueSource(strings = {"Kotuszkowo- blog o kotach"})
     void kotuszkowoTest(String expectedTitle) {
@@ -65,6 +65,7 @@ public class WebsiteTitleTest {
 
     @Tag("Filmweb")
     @Tag("Regression")
+    @DisplayName("Filmweb")
     @ParameterizedTest
     @ValueSource(strings = {"Filmweb - filmy takie jak Ty!"})
     void filmwebTest(String expectedTitle) {
@@ -74,6 +75,7 @@ public class WebsiteTitleTest {
 
     @Tag("SeleniumDocs")
     @Tag("Regression")
+    @DisplayName("Selenium documentation")
     @ParameterizedTest
     @ValueSource(strings = {"WebDriver | Selenium"})
     void seleniumDocsTest(String expectedTitle) {

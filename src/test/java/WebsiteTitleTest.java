@@ -4,19 +4,13 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
-public class WebsiteTitleTest {
+public class WebsiteTitleTest extends UrlsData {
 
     private WebDriver driver;
-
-    private final String siiPortalURL = "https://siiportal.sii.pl/";
-    private final String onetURL = "https://www.onet.pl/";
-    private final String kotuszkowoURL = "http://kotuszkowo.pl/";
-    private final String filmwebURL = "https://www.filmweb.pl/";
-    private final String seleniumDocsURL = "https://www.selenium.dev/documentation/en/webdriver/";
 
     @BeforeAll
     static void driverSetup() {
@@ -85,6 +79,6 @@ public class WebsiteTitleTest {
 
     public void checkWebsiteTitle(String expectedTitle) {
         String actualTitle = driver.getTitle();
-        assertThat("Title not as expected", actualTitle, equalTo(expectedTitle));
+        assertThat("Title not as expected", actualTitle, is(equalTo(expectedTitle)));
     }
 }
